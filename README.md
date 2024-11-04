@@ -6,7 +6,7 @@ Neste artigo será explorado o circuito  **`Device Watchdog Timer (WDT)`**, que 
 
 ### Diagrama simplificado
 
-O `WDT` funciona como um contador que incrementa a cada ciclo de clock de um oscilador independente do chip (O_WDT), ao mesmo tempo que esta integrado a ele. Quando o contador atinge um valor predefinido, chamado de tempo limite, o `WDT` dispara e força a reinicialização do sistema.
+O `WDT` funciona como um contador, que realiza incrementos a cada ciclo de clock, de um oscilador independente do chip (O_WDT). Quando o contador atinge um valor predefinido, chamado de tempo limite, o `WDT` dispara e força a reinicialização do sistema.
 
 ![Texto Alternativo](https://raw.githubusercontent.com/leonardoalvessousa/AVR_WDT/refs/heads/main/BlocDiagram.jpg)
 
