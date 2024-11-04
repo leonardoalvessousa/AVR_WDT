@@ -64,3 +64,14 @@ Sempre verifique os atrasos comuns existentes na tarefa principal como: Delay; S
 
 > [!CAUTION]
 > Evitando resets desnecessários gerados pelos processos normais do algoritmo. Realize alguns cálculos!!!
+
+## 😼 Autor
+
+ 🐈‍⬛ @leonardoalvessousa
+
+## 🎁 Expressões de gratidão
+
+* Conte a outras pessoas sobre este projeto 📢;
+* Convide o autor para uma cerveja 🍺;
+* Um agradecimento publicamente ou citação 🫂;
+* etc.
