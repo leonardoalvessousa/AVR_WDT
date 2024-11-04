@@ -1,14 +1,14 @@
-![Texto Alternativo](https://raw.githubusercontent.com/leonardoalvessousa/RaspAsmBareMetal/refs/heads/main/rpiIMG.jpg)
+![Texto Alternativo](https://raw.githubusercontent.com/leonardoalvessousa/AVR_WDT/refs/heads/main/AVR_BANNER.jpg)
 
 ## Apresentação
 
 Neste artigo será explorado o circuito  **`Device Watchdog Timer (WDT)`**, que esta presente nos dispositivos AVR® da Microchip Technology. O **`WDT`** é um mecanismo de segurança crucial que garante a estabilidade do sistema. Ele é útil para detectar falhas no software ou hardware, evitando que o sistema fique preso em um estado de erro.
 
-### Diagrama de blocos
+### Diagrama simplificado
 
 O `WDT` funciona como um contador que incrementa a cada ciclo de clock de um oscilador independente do chip (O_WDT), ao mesmo tempo que esta integrado a ele. Quando o contador atinge um valor predefinido, chamado de tempo limite, o `WDT` dispara e força a reinicialização do sistema.
 
-![Texto Alternativo](https://raw.githubusercontent.com/leonardoalvessousa/RaspAsmBareMetal/refs/heads/main/rpiIMG.jpg)
+![Texto Alternativo](https://raw.githubusercontent.com/leonardoalvessousa/AVR_WDT/refs/heads/main/BlocDiagram.jpg)
 
 ### Ativação do WDT
 
