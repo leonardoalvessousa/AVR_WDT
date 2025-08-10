@@ -1,18 +1,18 @@
-![Texto Alternativo](https://raw.githubusercontent.com/leonardoalvessousa/AVR_WDT/refs/heads/main/AVR_BANNER.jpg)
+![Alternative Text](https://raw.githubusercontent.com/leonardoalvessousa/AVR_WDT/refs/heads/main/AVR_BANNER.jpg)
 
-## Apresentação
+## Introduction
 
-Neste artigo será explorado o circuito  **`Device Watchdog Timer (WDT)`**, que esta presente nos dispositivos AVR® da Microchip Technology. O **`WDT`** é um mecanismo de segurança crucial que garante a estabilidade do sistema. Ele é útil para detectar falhas no software ou hardware, evitando que o sistema fique preso em um estado de erro.
+This article explores the **`Device Watchdog Timer (WDT)`** circuit, present in Microchip Technology’s AVR® devices. The **`WDT`** is a crucial safety mechanism that ensures system stability. It is useful for detecting software or hardware failures, preventing the system from getting stuck in an error state.
 
-### Diagrama simplificado
+### Simplified Diagram
 
-O `WDT` funciona como um contador, que realiza incrementos a cada ciclo de clock, de um oscilador independente do chip (O_WDT). Quando o contador atinge um valor predefinido, chamado de tempo limite, o `WDT` dispara e força a reinicialização do sistema.
+The `WDT` works as a counter that increments with each clock cycle of an independent on-chip oscillator (O\_WDT). When the counter reaches a predefined value, called the timeout, the `WDT` triggers and forces a system reset.
 
-![Texto Alternativo](https://raw.githubusercontent.com/leonardoalvessousa/AVR_WDT/refs/heads/main/BlocDiagram.jpg)
+![Alternative Text](https://raw.githubusercontent.com/leonardoalvessousa/AVR_WDT/refs/heads/main/BlocDiagram.jpg)
 
-### Ativação do WDT
+### Enabling the WDT
 
-Realizando um exemplo prático usando o Chip ATmega328p na IDE Arduino
+Practical example using the ATmega328p chip in the Arduino IDE:
 
 ```IDE_Arduino
 // C++
@@ -21,55 +21,58 @@ Realizando um exemplo prático usando o Chip ATmega328p na IDE Arduino
 
 void setup() 
 {
-  wdt_enable(WDTO_2S);
+  wdt_enable(WDTO_2S);
 }
 void loop() 
 {
-  // Tarefa principal
+  // Main task
 }
 ```
 
-> Inclusão da biblioteca WDT
+> **Including the WDT library**
 
-- **#include:** Essa diretiva indica ao compilador que ele deve incluir o arquivo de cabeçalho `avr/wdt.h`.
-- **avr/wdt.h:** Esse arquivo de cabeçalho contém as definições e funções necessárias para trabalhar com o WDT em dispositivos AVR.
+* **#include:** This directive tells the compiler to include the `avr/wdt.h` header file.
+* **avr/wdt.h:** This header file contains the definitions and functions needed to work with the WDT on AVR devices.
 
-> Tarefa inicial
+> **Initial task**
 
-- **void setup():** Essa função é chamada uma vez no início do programa. É onde você configura as configurações iniciais do seu programa.
--  **wdt_enable():** Essa função é definida no arquivo `avr/wdt.h` e habilita o WDT.
-- **WDTO_2S:** Essa constante, também definida no arquivo `avr/wdt.h`, configura o tempo limite do WDT para 2 segundos.
+* **void setup():** This function is called once at the beginning of the program. It’s where you set up your program’s initial configuration.
+* **wdt\_enable():** This function, defined in `avr/wdt.h`, enables the WDT.
+* **WDTO\_2S:** This constant, also defined in `avr/wdt.h`, sets the WDT timeout to 2 seconds.
 
- > [!NOTE]
-> Existem outros TIMEs pré definidos pela bibliote `avr/wdt.h`, segue a lista:
+> \[!NOTE]
+> There are other predefined TIME values available in the `avr/wdt.h` library:
 >
 > `wdt_enable(WDTO_8S);`
 > `wdt_enable(WDTO_4S);`
 > `wdt_enable(WDTO_1S);`
->  `wdt_enable(WDTO_500MS);`
->  `wdt_enable(WDTO_250MS);`
->  `wdt_enable(WDTO_1200MS);`
->  `wdt_enable(WDTO_60MS);`
->  `wdt_enable(WDTO_30MS);`
->  `wdt_enable(WDTO_15MS);`
->  > Segundo (S), Milissegundo (MS)
+> `wdt_enable(WDTO_500MS);`
+> `wdt_enable(WDTO_250MS);`
+> `wdt_enable(WDTO_1200MS);`
+> `wdt_enable(WDTO_60MS);`
+> `wdt_enable(WDTO_30MS);`
+> `wdt_enable(WDTO_15MS);`
+>
+> Second (S), Millisecond (MS)
 
-> Tarefa principal/loop
+> **Main task/loop**
 
-- **void loop():** Essa função é chamada repetidamente após a função `setup()` ser executada.
+* **void loop():** This function is called repeatedly after `setup()` has been executed.
 
-### Considerações finais
+### Final considerations
 
-Sempre verifique os atrasos comuns existentes na tarefa principal como: Delay; Subfunções com múltiplas tarefas complexas. Estes atrasos devem ser levados em consideração na escolha do timer da função `wdt_enable()`.
+Always check for common delays in the main task, such as `delay()` calls or subfunctions with multiple complex tasks. These delays must be considered when choosing the timer value for `wdt_enable()`.
 
-> [!CAUTION]
-> Evitando resets desnecessários gerados pelos processos normais do algoritmo. Realize alguns cálculos!!!
+> \[!CAUTION]
+> Avoid unnecessary resets caused by the algorithm’s normal processes. Do some calculations first!
 
-## 😼 Autor
+## 😼 Author
 
 🐈‍⬛ @leonardoalvessousa
 
-## 🎁 Expressões de gratidão
+## 🎁 How to show appreciation
 
-- Conte a outras pessoas sobre este projeto 📢;
-- Pague uma cerveja para o autor **[🍺](https://nubank.com.br/cobrar/f7g6w/6755dd2c-8e3d-4c14-9976-b1afefc8ae07)**;
+* Tell others about this project 📢
+* Buy the author a beer **[🍺](https://nubank.com.br/cobrar/f7g6w/6755dd2c-8e3d-4c14-9976-b1afefc8ae07)**
+
+---
